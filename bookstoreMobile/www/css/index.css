@@ -21,15 +21,6 @@ input {
 	text-align: center;
 }
 
-.navbar-brand {
-	margin-left: 0px !important;
-	position: absolute;
-	width: 100%;
-	left: 0;
-	text-align: center;
-	margin: auto;
-}
-
 #divVerde {
 	max-width: 142px;
 	min-height: 35px;
@@ -53,6 +44,7 @@ input {
 	position: absolute;
 	height: 100%;
 	width: 100%;
+	margin-top: -71px;
 }
 
 .morado {

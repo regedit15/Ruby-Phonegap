@@ -1,0 +1,26 @@
+
+<form
+	name="form"
+	novalidate>
+
+
+	<h2>Lista de Libros</h2>
+
+	<table>
+		<tr>
+			<th>Titulo</th>
+			<th>Descripcion</th>
+		</tr>
+
+
+		<tr ng-repeat="b in books">
+			<td>{{b.title}}</td>
+			<td>{{b.description}}</td>
+		</tr>
+	</table>
+
+
+
+
+
+</form>
