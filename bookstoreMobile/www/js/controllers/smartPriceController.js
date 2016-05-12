@@ -1,4 +1,4 @@
-var app = angular.module('bookStore', [ 'ngRoute', 'ngMessages' ]);
+var app = angular.module('bookStore', [ 'ngRoute', 'ngMessages' , 'ngResource']);
 
 app.controller('bookStoreController', function($scope, $http) {
 

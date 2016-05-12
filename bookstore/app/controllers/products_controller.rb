@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+skip_before_filter  :verify_authenticity_token
 
   # GET /products
   # GET /products.json
@@ -24,16 +25,27 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
+
+   #  respond_with Product.create(product_params)
+   #
+   logger.error "SI-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-"
+
     @product = Product.new(product_params)
 
-    respond_to do |format|
-      if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render :show, status: :created, location: @product }
-      else
-        format.html { render :new }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
+    # respond_to do |format|
+    #   if @product.save
+    #     format.html { redirect_to @product, notice: 'Product was successfully created.' }
+    #     format.json { render :show, status: :created, location: @product }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @product.errors, status: :unprocessable_entity }
+    #   end
+    # end
+
+    if @product.save
+      render json: @product, status: :created
+    else
+      render json: @product.errors, status: :unprocessable_entity
     end
   end
 
