@@ -1,16 +1,17 @@
-app.controller('newBookController', function($scope, $http, $resource) {
+app.controller('newBookController', function($scope, $http, $resource, $location) {
 
-    $scope.book;
+	$scope.book;
 
-    $scope.control = $resource('http://localhost:3000/products');
+	$scope.control = $resource('http://localhost:3000/products');
 
-    $scope.guardar = function() {
+	$scope.guardar = function() {
 
-        $scope.control.save({
-            product: $scope.book
-        }, function() {
-            $scope.book = "";
-        });
-    }
+		$scope.control.save({
+			product : $scope.book
+		}, function() {
+			$scope.book = "";
+			$location.url('/home');
+		});
+	}
 
 });

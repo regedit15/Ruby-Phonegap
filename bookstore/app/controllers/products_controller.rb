@@ -28,19 +28,9 @@ skip_before_filter  :verify_authenticity_token
 
    #  respond_with Product.create(product_params)
    #
-   logger.error "SI-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-"
+   logger.error " inicio -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-"
 
     @product = Product.new(product_params)
-
-    # respond_to do |format|
-    #   if @product.save
-    #     format.html { redirect_to @product, notice: 'Product was successfully created.' }
-    #     format.json { render :show, status: :created, location: @product }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @product.errors, status: :unprocessable_entity }
-    #   end
-    # end
 
     if @product.save
       render json: @product, status: :created
@@ -66,11 +56,12 @@ skip_before_filter  :verify_authenticity_token
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
-    @product.destroy
-    respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+
+      if @product.destroy
+        render json: @product, status: :created
+      else
+        render json: @product.errors, status: :unprocessable_entity
+      end
   end
 
   private
