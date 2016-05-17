@@ -53,17 +53,15 @@ app.controller('bookStoreController', function($scope, $http, $resource) {
 
 	$scope.eliminar = function(book) {
 
-		var ppp = {
-			id : 1,
-			title : "aaa",
-			description : "ssss"
-		};
+		var index = $scope.books.indexOf(book);
+		$scope.books.splice(index, 1);
 
 		$scope.control.remove({
 			id : book.id
 		}, function() {
 			console.log(111111111111111);
 		});
+
 	}
 
 });

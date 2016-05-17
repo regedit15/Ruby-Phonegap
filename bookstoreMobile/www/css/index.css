@@ -86,3 +86,7 @@ input {
 .msjError {
 	color: red;
 }
+
+.pagination {
+	display: inline-flex !important;
+}
