@@ -1,6 +1,6 @@
 var app = angular.module('bookStore', [ 'ngRoute', 'ngMessages', 'ngResource' ]);
 
-app.controller('bookStoreController', function($scope, $http, $resource) {
+app.controller('bookStoreController', function($scope, $http, $location, factory) {
 
 	$scope.books;
 
@@ -27,40 +27,23 @@ app.controller('bookStoreController', function($scope, $http, $resource) {
 
 	}
 
-	// $scope.control = $resource('http://localhost:3000/products');
-
-	$scope.control = $resource("http://localhost:3000/products/:id", {
-		id : "@id"
-	}, {
-		'create' : {
-			method : 'POST'
-		},
-		'index' : {
-			method : 'GET',
-			isArray : true
-		},
-		'show' : {
-			method : 'GET',
-			isArray : false
-		},
-		'update' : {
-			method : 'PUT'
-		},
-		'destroy' : {
-			method : 'DELETE'
-		}
-	});
-
 	$scope.eliminar = function(book) {
 
 		var index = $scope.books.indexOf(book);
 		$scope.books.splice(index, 1);
 
-		$scope.control.remove({
+		factory.controller().remove({
 			id : book.id
 		}, function() {
-			console.log(111111111111111);
+			console.log('Se lemino el libro con id: ' + book.id);
 		});
+
+	}
+
+	$scope.ver = function(book) {
+
+		factory.setIdBookSelected(book.id);
+		$location.url('/bookView');
 
 	}
 
