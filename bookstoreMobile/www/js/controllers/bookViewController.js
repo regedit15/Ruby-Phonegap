@@ -1,9 +1,6 @@
 app.controller('bookViewController', function($scope, $http, $resource, $location, service, factory) {
 
-	$scope.book = {
-		title : 'aaa',
-		description : 'ssss'
-	};
+	$scope.book;
 
 	service.getBook(factory.getIdBookSelected()).then(function(response) {
 
@@ -13,6 +10,7 @@ app.controller('bookViewController', function($scope, $http, $resource, $locatio
 
 	$scope.volver = function() {
 		$location.url('/home');
+
 	}
 
 });

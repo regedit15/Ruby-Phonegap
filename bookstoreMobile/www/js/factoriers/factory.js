@@ -1,8 +1,12 @@
-app.factory('factory', function($resource) {
+app.factory('factory', function($http, $resource, $q) {
 
 	var controller;
 
+	var bookSelected;
+
 	var idBookSelected;
+
+	var books;
 
 	return {
 		controller : function() {
@@ -32,11 +36,36 @@ app.factory('factory', function($resource) {
 			return controller;
 		},
 
+		getBooks : function() {
+
+			var defer = $q.defer();
+
+			if (books == null) {
+
+				$http.get('http://localhost:3000/products.json').then(function(response) {
+					books = response.data;
+					defer.resolve(books);
+				});
+			} else {
+				defer.resolve(books);
+			}
+
+			return defer.promise;
+		},
+
 		setIdBookSelected : function(id) {
 			idBookSelected = id;
 		},
 
-		getIdBookSelected : function(id) {
+		getIdBookSelected : function() {
+			return idBookSelected;
+		},
+
+		setBookSelected : function(book) {
+			idBookSelected = book;
+		},
+
+		getBookSelected : function() {
 			return idBookSelected;
 		}
 	}

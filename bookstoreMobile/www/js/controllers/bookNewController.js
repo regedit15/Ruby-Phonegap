@@ -2,16 +2,15 @@ app.controller('bookNewController', function($scope, $http, $resource, $location
 
 	$scope.book;
 
-	// $scope.control = $resource('http://localhost:3000/products');
-
-	$scope.guardar = function() {
+	$scope.bookNew = function() {
 
 		factory.controller().save({
 			product : $scope.book
 		}, function() {
-			$scope.book = "";
-			$location.url('/home');
+			console.log('Se creo un nuevo libro');
 		});
+		
+		$location.url('/home');
 	}
 
 });

@@ -2,24 +2,16 @@ var app = angular.module('bookStore', [ 'ngRoute', 'ngMessages', 'ngResource' ])
 
 app.controller('bookStoreController', function($scope, $http, $location, factory) {
 
-	$scope.books;
+	factory.getBooks().then(function(data) {
 
-	new Promise(function(resolve, reject) {
-		$http.get('http://localhost:3000/products.json').then(function(response) {
-			$scope.books = response.data;
-			resolve();
-		});
-	}).then(function(result) {
+		$scope.books = data;
 
-		// esto es para inicializar la tabla con bootstrap table
 		$('#dataTables-example').DataTable({
 			responsive : true
 		});
-
 	});
 
 	$scope.post = function() {
-
 		var lista;
 		$http.get('http://localhost:3000/products.json').then(function(response) {
 			lista = response.data;
@@ -27,24 +19,23 @@ app.controller('bookStoreController', function($scope, $http, $location, factory
 
 	}
 
-	$scope.eliminar = function(book) {
-
+	$scope.bookDelete = function(book) {
 		var index = $scope.books.indexOf(book);
 		$scope.books.splice(index, 1);
-
 		factory.controller().remove({
 			id : book.id
 		}, function() {
 			console.log('Se lemino el libro con id: ' + book.id);
 		});
-
 	}
 
-	$scope.ver = function(book) {
-
+	$scope.bookView = function(book) {
 		factory.setIdBookSelected(book.id);
 		$location.url('/bookView');
-
 	}
 
+	$scope.bookEdit = function(book) {
+		factory.setBookSelected(book);
+		$location.url('/bookEdit');
+	}
 });

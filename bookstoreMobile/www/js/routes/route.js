@@ -9,6 +9,9 @@ app.config(function($routeProvider) {
 	}).when('/bookView', {
 		templateUrl : 'bookView.html',
 		controller : 'bookViewController'
+	}).when('/bookEdit', {
+		templateUrl : 'bookEdit.html',
+		controller : 'bookEditController'
 	}).otherwise({
 		redirectTo : '/'
 	});
