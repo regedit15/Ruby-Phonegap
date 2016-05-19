@@ -1,11 +1,16 @@
 var app = angular.module('bookStore', [ 'ngRoute', 'ngMessages', 'ngResource' ]);
 
-app.controller('bookStoreController', function($scope, $http, $location, factory) {
+app.controller('bookStoreController', function($scope, $http, $location, factory, $q) {
 
-	factory.getBooks().then(function(data) {
+	new Promise(function(resolve, reject) {
 
-		$scope.books = data;
+		factory.getBooks().then(function(data) {
+			$scope.books = data;
+			resolve();
+		});
 
+	}).then(function(result) {
+		// esto es para inicializar la tabla con bootstrap table
 		$('#dataTables-example').DataTable({
 			responsive : true
 		});
