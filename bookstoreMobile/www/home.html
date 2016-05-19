@@ -27,22 +27,25 @@
 
 					<td>
 						<div style="margin: auto; display: table;">
-							<button
-								type="button"
-								class="btn btn-info glyphicon glyphicon-search btn-sm"
-								ng-click="bookView(b)"
-								style="margin-right: 6px;"></button>
+							<div style="display: inline-flex;">
+								<button
+									type="button"
+									class="btn btn-info glyphicon glyphicon-search btn-sm"
+									ng-click="bookView(b)"
+									style="margin-right: 6px;"></button>
 
-							<button
-								type="button"
-								class="btn btn-warning glyphicon glyphicon glyphicon-pencil btn-sm"
-								style="margin-right: 6px;"
-								ng-click="bookEdit(b)"></button>
+								<button
+									type="button"
+									class="btn btn-warning glyphicon glyphicon glyphicon-pencil btn-sm"
+									style="margin-right: 6px;"
+									ng-click="bookEdit(b)"></button>
 
-							<button
-								type="button"
-								class="btn btn-danger glyphicon glyphicon-remove btn-sm"
-								ng-click="bookDelete(b)"></button>
+								<button
+									type="button"
+									class="btn btn-danger glyphicon glyphicon-remove btn-sm"
+									style="margin-right: 0px;"
+									ng-click="bookDelete(b)"></button>
+							</div>
 						</div>
 					</td>
 
