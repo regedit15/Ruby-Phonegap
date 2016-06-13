@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<!-- Responsibidad Bootstrap-->
+<meta
+	name="format-detection"
+	content="telephone=no" />
+<meta
+	name="msapplication-tap-highlight"
+	content="no" />
+<meta
+	name="viewport"
+	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="css/index.css">
+
+<!-- Bootstrap -->
+
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
+
+<!-- Bootstrap-Table -->
+<link
+	href="bower_components/bootstrap-table/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css"
+	rel="stylesheet">
+<link
+	href="bower_components/bootstrap-table/bower_components/datatables-responsive/css/dataTables.responsive.css"
+	rel="stylesheet">
+<link
+	href="bower_components/bootstrap-table/dist/css/sb-admin-2.css"
+	rel="stylesheet">
+<link
+	href="bower_components/bootstrap-table/bower_components/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet"
+	type="text/css">
+
+
+
+
+
+
+<title>Store</title>
+
+<link
+	rel='shortcut icon'
+	type='image/png' />
+</head>
+
+<body>
+
+
+	<!-- 	<nav class="navbar navbar-inverse navbar-fixed-top"> -->
+	<!-- 		<div class="container"> -->
+	<!-- 			<div class="navbar-header"> -->
+	<!-- 				<a -->
+	<!-- 					class="navbar-brand" -->
+	<!-- 					href="#/acercaDe">Store</a> -->
+	<!-- 			</div> -->
+	<!-- 		</div> -->
+	<!-- 	</nav> -->
+
+	<nav class="navbar navbar-inverse navbar-static-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a
+					class="navbar-brand"
+					href="#">Store</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="active">
+					<a href="#">Listado</a>
+				</li>
+
+				<li>
+					<a href="#/productNew">Nuevo Libro</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+
+
+	<div id="contenedor">
+
+		<div class="acercaDe">
+			<div style="margin: auto; margin-top: 48px; display: table;">
+				<div ng-app="productStore">
+					<div ng-view></div>
+
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+
+	<!-- jquery -->
+	<script
+		type="text/javascript"
+		src="bower_components/jquery/dist/jquery.min.js"></script>
+
+	<!-- Bootstrap -->
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+	<!-- Angularjs -->
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
+	<script src="bower_components/angular-messages/angular-messages.js"></script>
+
+	<!-- Controladores -->
+	<script src="js/controllers/productStoreController.js"></script>
+	<script src="js/controllers/productNewController.js"></script>
+	<script src="js/controllers/productViewController.js"></script>
+	<script src="js/controllers/productEditController.js"></script>
+
+
+	<!-- Services -->
+	<script src="js/services/service.js"></script>
+
+	<!-- Factories -->
+	<script src="js/factoriers/factory.js"></script>
+
+	<!-- Rutas -->
+	<script src="js/routes/route.js"></script>
+
+	<!-- Resource -->
+	<script src="bower_components\angular-resource\angular-resource.min.js"></script>
+
+	<!-- Bootstrap Table -->
+
+	<script src="bower_components/bootstrap-table/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap-table/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+	<script src="bower_components/bootstrap-table/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+
+
+
+
+</body>
+
+</html>
