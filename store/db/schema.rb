@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160613225341) do
   end
 
   add_index "presentations", ["product_id"], name: "index_presentations_on_product_id", using: :btree
+  add_index "presentations", ["product_id"], name: "product_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -29,5 +30,5 @@ ActiveRecord::Schema.define(version: 20160613225341) do
     t.datetime "updated_at",                null: false
   end
 
-  add_foreign_key "presentations", "products"
+  add_foreign_key "presentations", "products", on_delete: :cascade
 end

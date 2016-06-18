@@ -8,6 +8,17 @@ class ProductsController < ApplicationController
         @products = Product.all
     end
 
+
+    # GET /hola
+    # GET /hola.json
+    def hola
+        logger.error "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        @p = Product.first
+        render json: @p
+        logger.error "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+
+    end
+
     # GET /products/1
     # GET /products/1.json
     def show

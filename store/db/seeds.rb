@@ -8,47 +8,64 @@
 
 
 Product.delete_all
-# . . .
-Product.create(title: 'Libro 1', description: 'Descripcion 1')
-# . . .
-Product.create(title: 'Libro 2', description: 'Descripcion 2')
-# . . .
-Product.create(title: 'Libro 3', description: 'Descripcion 3')
-# . . .
-Product.create(title: 'Libro 4', description: 'Descripcion 4')
-# . . .
-Product.create(title: 'Libro 5', description: 'Descripcion 5')
-# . . .
-Product.create(title: 'Libro 6', description: 'Descripcion 6')
-# . . .
-Product.create(title: 'Libro 7', description: 'Descripcion 7')
-# . . .
-Product.create(title: 'Libro 8', description: 'Descripcion 8')
-# . . .
-Product.create(title: 'Libro 9', description: 'Descripcion 9')
-# . . .
-Product.create(title: 'Libro 10', description: 'Descripcion 10')
-# . . .
-Product.create(title: 'Libro 11', description: 'Descripcion 11')
 
-Product.create(title: 'Libro 12', description: 'Descripcion 12')
+Presentation.delete_all
+
 # . . .
-Product.create(title: 'Libro 13', description: 'Descripcion 13')
+Product.create(title: 'Producto 1', description: 'Descripcion 1')
 # . . .
-Product.create(title: 'Libro 14', description: 'Descripcion 14')
+Product.create(title: 'Producto 2', description: 'Descripcion 2')
 # . . .
-Product.create(title: 'Libro 15', description: 'Descripcion 15')
+Product.create(title: 'Producto 3', description: 'Descripcion 3')
+
+
+p = Product.first
+
+Presentation.create(title: 'Presentation 1')
+
+b = Presentation.first
+
+b.product = p
+
+b.save
+
+
+
 # . . .
-Product.create(title: 'Libro 16', description: 'Descripcion 16')
-# . . .
-Product.create(title: 'Libro 17', description: 'Descripcion 17')
-# . . .
-Product.create(title: 'Libro 18', description: 'Descripcion 18')
-# . . .
-Product.create(title: 'Libro 19', description: 'Descripcion 19')
-# . . .
-Product.create(title: 'Libro 20', description: 'Descripcion 20')
-# . . .
-Product.create(title: 'Libro 21', description: 'Descripcion 21')
-# . . .
-Product.create(title: 'Libro 22', description: 'Descripcion 22')
+# Product.create(title: 'Producto 4', description: 'Descripcion 4')
+# # . . .
+# Product.create(title: 'Producto 5', description: 'Descripcion 5')
+# # . . .
+# Product.create(title: 'Producto 6', description: 'Descripcion 6')
+# # . . .
+# Product.create(title: 'Producto 7', description: 'Descripcion 7')
+# # . . .
+# Product.create(title: 'Producto 8', description: 'Descripcion 8')
+# # . . .
+# Product.create(title: 'Producto 9', description: 'Descripcion 9')
+# # . . .
+# Product.create(title: 'Producto 10', description: 'Descripcion 10')
+# # . . .
+# Product.create(title: 'Producto 11', description: 'Descripcion 11')
+#
+# Product.create(title: 'Producto 12', description: 'Descripcion 12')
+# # . . .
+# Product.create(title: 'Producto 13', description: 'Descripcion 13')
+# # . . .
+# Product.create(title: 'Producto 14', description: 'Descripcion 14')
+# # . . .
+# Product.create(title: 'Producto 15', description: 'Descripcion 15')
+# # . . .
+# Product.create(title: 'Producto 16', description: 'Descripcion 16')
+# # . . .
+# Product.create(title: 'Producto 17', description: 'Descripcion 17')
+# # . . .
+# Product.create(title: 'Producto 18', description: 'Descripcion 18')
+# # . . .
+# Product.create(title: 'Producto 19', description: 'Descripcion 19')
+# # . . .
+# Product.create(title: 'Producto 20', description: 'Descripcion 20')
+# # . . .
+# Product.create(title: 'Producto 21', description: 'Descripcion 21')
+# # . . .
+# Product.create(title: 'Producto 22', description: 'Descripcion 22')
